@@ -21,7 +21,7 @@ $("#cari").click(function () {
   var address = document.getElementById("keyword").value;
   var request = {
     location: magelang,
-    radius: "500",
+    radius: "1000",
     query: address
   };
   service = new google.maps.places.PlacesService(map);
