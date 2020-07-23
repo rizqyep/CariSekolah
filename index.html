@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cari Sekolah</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container pt-5 pr-5 pl-5 pb-5">
+		<h1 class="mt-5 mb-3 font-weight-bold">Cari Sekolah</h1>
+		<form action="">
+			<div class="input-group">
+				<input class="form-control" type="text" id="keyword">
+				<button type="submit" class="btn btn-primary input-group-addon" id="cari">Cari</button>
+			</div>
+		</form>
+
+		<table id="table-result" class="mt-3 table table-bordered">
+			<thead>
+				<th>Nama Sekolah</th>
+				<th>Alamat Lengkap</th>
+				<th>Long</th>
+				<th>Lat</th>
+				<th>No Telepon</th>
+			</thead>
+			<tbody id="result">
+
+			</tbody>
+		</table>
+	</div>
+
+
+	<div id="map" style="display :none"></div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous">
+
+	</script>
+
+	<script src="js/finder.js">
+
+	</script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkAO2sno3rk-OC5eL0SJl74dQATjtXn2I&libraries=places&callback=initMap">
+	</script>
+
+
+</body>
+
+
+
+
+</html>
