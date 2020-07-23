@@ -30,7 +30,20 @@ $("#cari").click(function () {
       $("#table-result").show();
       document.getElementById("result").innerHTML = "";
       for (let i = 0; i < results.length; i++) {
-        console.log(results[i]);
+        console.log(results[i].geometry.location);
+        var request_details = {
+          placeId: results[i].place_id,
+          fields: ["name", "rating", "formatted_phone_number", "geometry"]
+        };
+        var service2;
+        service2 = new google.maps.places.PlacesService(map);
+        var details = service2.getDetails(request_details, callback);
+
+        function callback(place, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            $("#phonenumber" + i).html(place.formatted_phone_number);
+          }
+        }
         document.getElementById("result").innerHTML += `
         <tr>
             <td>
@@ -45,8 +58,8 @@ $("#cari").click(function () {
             <td>
             ${results[i].geometry.location.lat}
             </td>
-            <td>
-            ${results[i].geometry.location.long}
+            <td id ='phonenumber${i}'>
+            
             </td>
             
         </tr>
